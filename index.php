@@ -1,8 +1,26 @@
 <?php
-require 'vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
-use Carbon/Carbon;
+trait message {
+  public function msg() {
+    echo "OOP is fun! ";
+  }
+}
 
-$date = Carbon::now();
+class Welcome {
+  use message;
+}
 
-echo $date->toDayDateTimeString();
+$obj = new Welcome();
+$obj->msg();
+
+use Symfony\Component\Translation\Loader\ArrayLoader;
+use Symfony\Component\Translation\Translator;
+
+$translator = new Translator('fr_FR');
+$translator->addLoader('array', new ArrayLoader());
+$translator->addResource('array', [
+    'Symfony is great!' => 'Symfony est super !',
+], 'fr_FR');
+
+var_dump($translator->trans('Symfony is great!'));
