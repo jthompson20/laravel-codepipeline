@@ -1,2 +1,2 @@
 #!/bin/bash
-service https stop
+service httpd stop
