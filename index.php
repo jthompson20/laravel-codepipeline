@@ -14,6 +14,8 @@ class Welcome {
 $obj = new Welcome();
 $obj->msg();
 
+echo '<BR><BR>';
+
 use Symfony\Component\Translation\Loader\ArrayLoader;
 use Symfony\Component\Translation\Translator;
 
