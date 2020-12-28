@@ -1,8 +1,6 @@
 <?php
 require_once 'vendor/autoload.php';
 
-echo 'Hi Mom<BR>';
-
 trait message {
   public function msg() {
     echo "OOP is fun! ";
